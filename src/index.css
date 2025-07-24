@@ -17,33 +17,34 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 220 100% 27%;
+    --primary: 210 100% 45%;
     --primary-foreground: 210 40% 98%;
-    --primary-light: 220 60% 50%;
+    --primary-light: 210 60% 60%;
 
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 20% 15%;
+    --secondary: 210 15% 96%;
+    --secondary-foreground: 210 20% 15%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 46%;
 
-    --accent: 262 83% 65%;
+    --accent: 345 82% 60%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 91%;
-    --input: 220 15% 94%;
-    --ring: 220 100% 27%;
+    --border: 210 15% 91%;
+    --input: 210 15% 94%;
+    --ring: 210 100% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 27%), hsl(262 83% 65%));
-    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 98%), hsl(220 15% 96%));
-    --shadow-elegant: 0 4px 20px -4px hsl(220 100% 27% / 0.15);
-    --shadow-card: 0 2px 8px -2px hsl(220 20% 20% / 0.08);
+    /* PVPSIT Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%), hsl(345 82% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(345 82% 60%), hsl(345 82% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 15% 98%), hsl(210 15% 96%));
+    --shadow-elegant: 0 4px 20px -4px hsl(210 100% 45% / 0.15);
+    --shadow-card: 0 2px 8px -2px hsl(210 20% 20% / 0.08);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
