@@ -12,14 +12,14 @@ const feedItems = [
       name: "Career Development Office",
       avatar: "/placeholder-user.jpg",
       verified: true,
-      role: "University"
+      role: "PVPSIT"
     },
     content: "Join us for the Annual Alumni Networking Event - Connect with industry leaders and expand your professional network.",
-    image: "/lovable-uploads/52ac44b7-a39a-457f-823b-466aea3e38b8.png",
+    image: "/lovable-uploads/3bd3a802-6cdb-4c8a-ad73-95f585334971.png",
     event: {
       title: "Annual Alumni Networking Event",
       date: "Dec 15, 2024",
-      location: "University Main Hall",
+      location: "PVPSIT Main Hall",
       attendees: 156
     },
     engagement: { likes: 42, comments: 8, shares: 12 },
@@ -35,7 +35,7 @@ const feedItems = [
       role: "Software Engineer at Google",
       gradYear: "2019"
     },
-    content: "Looking to mentor CS students interested in machine learning! I'd love to share my journey from university to Big Tech. Drop a comment if you're interested! 🚀",
+    content: "Looking to mentor CS students interested in machine learning! I'd love to share my journey from PVPSIT to Big Tech. Drop a comment if you're interested! 🚀",
     engagement: { likes: 28, comments: 15, shares: 5 },
     timestamp: "4 hours ago"
   },

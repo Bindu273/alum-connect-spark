@@ -9,7 +9,7 @@ const upcomingEvents = [
     title: "Tech Career Fair",
     date: "Dec 18",
     time: "2:00 PM",
-    location: "Student Center",
+    location: "PVPSIT Student Center",
     attendees: 89,
     type: "Career"
   },
@@ -27,7 +27,7 @@ const upcomingEvents = [
     title: "Year-End Celebration",
     date: "Dec 22",
     time: "7:00 PM",
-    location: "Alumni Hall",
+    location: "PVPSIT Alumni Hall",
     attendees: 156,
     type: "Social"
   }

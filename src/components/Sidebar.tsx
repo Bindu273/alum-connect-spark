@@ -1,96 +1,93 @@
-import { Users, Calendar, MessageSquare, BookOpen, TrendingUp, Settings, ChevronRight } from "lucide-react";
+import { Calendar, Users, TrendingUp, Settings, User, Eye, GitBranch } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
-interface SidebarItem {
-  icon: React.ComponentType<{ className?: string }>;
-  label: string;
-  count?: number;
-  isActive?: boolean;
-}
+const navigationItems = [
+  { icon: Calendar, label: "Events", count: 3, active: false },
+  { icon: Users, label: "Mentorship", count: null, active: false },
+  { icon: GitBranch, label: "Career Paths", count: null, active: false },
+  { icon: Settings, label: "Settings", count: null, active: false }
+];
 
-const sidebarItems: SidebarItem[] = [
-  { icon: Users, label: "My Network", count: 24, isActive: true },
-  { icon: MessageSquare, label: "Messages", count: 5 },
-  { icon: Calendar, label: "Events", count: 3 },
-  { icon: BookOpen, label: "Mentorship" },
-  { icon: TrendingUp, label: "Career Paths" },
-  { icon: Settings, label: "Settings" },
+const profileStats = [
+  { label: "Profile views", value: 127 },
+  { label: "Connections", value: 89 },
+  { label: "Mentoring", value: "5 students" }
+];
+
+const trendingTopics = [
+  "#TechCareers",
+  "#AlumniMeetup", 
+  "#DataScience"
 ];
 
 export const Sidebar = () => {
   return (
-    <aside className="w-64 bg-gradient-subtle border-r border-border/50 h-[calc(100vh-4rem)] overflow-y-auto">
-      <div className="p-6">
-        <div className="space-y-2">
-          <h2 className="text-lg font-semibold text-foreground mb-4">Quick Access</h2>
-          
-          {sidebarItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <Button
-                key={index}
-                variant={item.isActive ? "secondary" : "ghost"}
-                className={`w-full justify-between h-auto p-3 transition-smooth ${
-                  item.isActive 
-                    ? "bg-primary/10 text-primary border border-primary/20 shadow-sm" 
-                    : "hover:bg-secondary/70 text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <Icon className="h-5 w-5" />
-                  <span className="font-medium">{item.label}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  {item.count && (
-                    <Badge 
-                      variant={item.isActive ? "default" : "secondary"}
-                      className="h-5 min-w-[20px] text-xs"
-                    >
-                      {item.count}
-                    </Badge>
-                  )}
-                  <ChevronRight className="h-4 w-4 opacity-50" />
-                </div>
-              </Button>
-            );
-          })}
-        </div>
+    <aside className="w-64 bg-sidebar border-r border-sidebar-border h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
+      <div className="p-4 space-y-6">
+        {/* Navigation */}
+        <nav className="space-y-2">
+          {navigationItems.map((item) => (
+            <Button
+              key={item.label}
+              variant="ghost"
+              className={`w-full justify-start gap-3 h-10 ${
+                item.active ? 'bg-sidebar-accent text-sidebar-accent-foreground' : 'text-sidebar-foreground hover:bg-sidebar-accent/50'
+              }`}
+            >
+              <item.icon className="h-4 w-4" />
+              <span className="flex-1 text-left">{item.label}</span>
+              {item.count && (
+                <Badge variant="secondary" className="bg-sidebar-accent text-sidebar-accent-foreground">
+                  {item.count}
+                </Badge>
+              )}
+            </Button>
+          ))}
+        </nav>
 
-        {/* Profile Summary */}
-        <div className="mt-8 p-4 bg-card rounded-lg shadow-card border">
-          <h3 className="font-semibold text-sm text-foreground mb-2">Your Profile</h3>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            <div className="flex justify-between">
-              <span>Profile views</span>
-              <span className="text-primary font-medium">127</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Connections</span>
-              <span className="text-primary font-medium">89</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Mentoring</span>
-              <span className="text-accent font-medium">5 students</span>
-            </div>
-          </div>
-          <Button variant="outline" size="sm" className="w-full mt-3 text-xs">
-            View Profile
-          </Button>
-        </div>
+        <Separator className="bg-sidebar-border" />
 
-        {/* Trending Topics */}
-        <div className="mt-6 p-4 bg-card rounded-lg shadow-card border">
-          <h3 className="font-semibold text-sm text-foreground mb-3">Trending</h3>
+        {/* Your Profile Section */}
+        <Card className="bg-sidebar-accent/30 border-sidebar-border">
+          <CardContent className="p-4">
+            <h3 className="font-semibold text-sidebar-foreground mb-3">Your Profile</h3>
+            <div className="space-y-3">
+              {profileStats.map((stat) => (
+                <div key={stat.label} className="flex justify-between items-center">
+                  <span className="text-sm text-sidebar-foreground/70">{stat.label}</span>
+                  <span className="font-semibold text-sidebar-primary">{stat.value}</span>
+                </div>
+              ))}
+            </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="w-full mt-4 border-sidebar-border text-sidebar-foreground hover:bg-sidebar-accent"
+            >
+              <User className="h-4 w-4 mr-2" />
+              View Profile
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Trending Section */}
+        <div>
+          <h3 className="font-semibold text-sidebar-foreground mb-3 flex items-center gap-2">
+            <TrendingUp className="h-4 w-4" />
+            Trending
+          </h3>
           <div className="space-y-2">
-            {["#TechCareers", "#AlumniMeetup", "#DataScience"].map((tag, index) => (
+            {trendingTopics.map((topic) => (
               <Button
-                key={index}
+                key={topic}
                 variant="ghost"
                 size="sm"
-                className="h-auto p-2 w-full justify-start text-xs hover:bg-accent/10 hover:text-accent"
+                className="w-full justify-start text-sidebar-foreground/70 hover:text-sidebar-primary hover:bg-sidebar-accent/50"
               >
-                {tag}
+                {topic}
               </Button>
             ))}
           </div>

@@ -6,42 +6,29 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
-      {/* Top Banner */}
-      <div className="bg-primary text-primary-foreground text-center py-1 text-sm">
-        NAAC has conferred 'A+' grade to the Institution. • Approved by AICTE and permanently affiliated to JNTUK.
-      </div>
-      
-      {/* Main Header */}
-      <div className="container flex h-20 items-center justify-between px-6">
-        {/* Logo and College Info */}
-        <div className="flex items-center gap-4">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between px-6">
+        {/* Logo and Navigation */}
+        <div className="flex items-center gap-8">
           <div className="flex items-center gap-3">
-            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center border-2 border-white shadow-lg">
-              <span className="text-white font-bold text-xl">P</span>
+            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">PA</span>
             </div>
             <div>
-              <h1 className="font-bold text-xl text-foreground leading-tight">Prasad V. Potluri</h1>
-              <h2 className="font-bold text-lg text-foreground leading-tight">Siddhartha Institute of Technology</h2>
-              <p className="text-sm text-muted-foreground">Autonomous</p>
+              <h1 className="font-bold text-lg text-foreground">PVPSIT</h1>
+              <p className="text-sm text-muted-foreground -mt-1">ALUMNI</p>
             </div>
           </div>
           
-          <nav className="hidden lg:flex items-center gap-6 ml-8">
+          <nav className="hidden md:flex items-center gap-6">
             <Button variant="ghost" className="text-foreground hover:text-primary">
-              Home
+              Connect
             </Button>
             <Button variant="ghost" className="text-foreground hover:text-primary">
-              About
+              Events
             </Button>
             <Button variant="ghost" className="text-foreground hover:text-primary">
-              Admissions
-            </Button>
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              Academics
-            </Button>
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              Departments
+              Forums
             </Button>
           </nav>
         </div>
